@@ -30,7 +30,7 @@ namespace DoAn
             {
                 return dsDanhBa[m_sdt];
             }
-            catch
+            catch 
             {
 
                 return null;
@@ -38,7 +38,7 @@ namespace DoAn
         }
         public void xoa(string m_sdt)
         {
-            dsDanhBa.Remove(m_sdt);
+           dsDanhBa.Remove(m_sdt);
         }
         public void sua(CDanhBa db)
         {
@@ -46,37 +46,26 @@ namespace DoAn
         }
         public bool ghiFile(string tenfile)
         {
-            using (Stream file = File.Open(tenfile, FileMode.Create))
+            using(Stream file = File.Open(tenfile, FileMode.Create))
             {
                 BinaryFormatter bf = new BinaryFormatter();
                 bf.Serialize(file, dsDanhBa);
                 return true;
             }
         }
-        public void docFile(string tenfile)
-
-        {    // Xóa dữ liệu cũ trong Dictionary trước khi nạp file mới
-            dsDanhBa.Clear();
-            // Mở file văn bản để đọc 
-            using (StreamReader sr = new StreamReader("dsdb.txt"))
+        public bool docFile(string tenfile)
+        {
+            BinaryFormatter binFormatter = new BinaryFormatter();
+            if (File.Exists(tenfile))
             {
-                string line;
-                while ((line = sr.ReadLine()) != null)
+                using(FileStream readerFileStream = new FileStream(tenfile, FileMode.Open))
                 {
-                    // Tách dòng theo dấu phẩy: MaSo, HoTen, SDT, DiaChi
-                    string[] parts = line.Split(',');
-
-                    if (parts.Length == 4) // Kiểm tra đúng số cột dữ liệu
-                    {
-                        CDanhBa db = new CDanhBa(parts[0], parts[1], parts[2], parts[3]); // Tạo một đối tượng danh bạ từ dữ liệu đã tách
-                        dsDanhBa.Add(db.SDT, db);
-                        // Thêm vào Dictionary với key = Số điện thoại
-                        // (Cần đảm bảo không trùng SDT)
-                    }
+                    dsDanhBa = (Dictionary<string, CDanhBa>)binFormatter.Deserialize(readerFileStream);
+                    return true;
                 }
             }
-
-
+            return false;
         }
+        
     }
 }
