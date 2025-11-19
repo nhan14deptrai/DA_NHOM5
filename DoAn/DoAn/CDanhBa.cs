@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace DoAn
 {
+    [Serializable]
     public class CDanhBa
     {
         private string m_sdt;

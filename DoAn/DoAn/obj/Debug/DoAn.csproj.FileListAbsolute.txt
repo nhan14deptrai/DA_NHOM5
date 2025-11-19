@@ -30,4 +30,13 @@ D:\DoAn\DoAn\DoAn\obj\Debug\DoAn.csproj.GenerateResource.cache
 D:\DoAn\DoAn\DoAn\obj\Debug\DoAn.csproj.CoreCompileInputs.cache
 D:\DoAn\DoAn\DoAn\obj\Debug\DoAn.exe
 D:\DoAn\DoAn\DoAn\obj\Debug\DoAn.pdb
-D:\DoAnTinHoc_nhom5\DoAn\DoAn\obj\Debug\DoAn.exe.config
+C:\Users\HP\Downloads\DoAn\DoAn\DoAn\bin\Debug\DoAn.exe.config
+C:\Users\HP\Downloads\DoAn\DoAn\DoAn\bin\Debug\DoAn.exe
+C:\Users\HP\Downloads\DoAn\DoAn\DoAn\bin\Debug\DoAn.pdb
+C:\Users\HP\Downloads\DoAn\DoAn\DoAn\obj\Debug\DoAn.csproj.AssemblyReference.cache
+C:\Users\HP\Downloads\DoAn\DoAn\DoAn\obj\Debug\DoAn.Form1.resources
+C:\Users\HP\Downloads\DoAn\DoAn\DoAn\obj\Debug\DoAn.Properties.Resources.resources
+C:\Users\HP\Downloads\DoAn\DoAn\DoAn\obj\Debug\DoAn.csproj.GenerateResource.cache
+C:\Users\HP\Downloads\DoAn\DoAn\DoAn\obj\Debug\DoAn.csproj.CoreCompileInputs.cache
+C:\Users\HP\Downloads\DoAn\DoAn\DoAn\obj\Debug\DoAn.exe
+C:\Users\HP\Downloads\DoAn\DoAn\DoAn\obj\Debug\DoAn.pdb
