@@ -64,18 +64,21 @@ namespace DoAn
 
         }
         private void btnXoa_Click(object sender, EventArgs e)
-        {
+        { //Khởi tạo đối tượng Danh bạ (chỉ cần SDT để xóa)
             CDanhBa danhBa = new CDanhBa();
             danhBa.SDT = txtSDT.Text;
+            //Kiểm tra tính hợp lệ: Số điện thoại cần xóa không được rỗng
             if (danhBa.SDT == "")
             {
                 MessageBox.Show("Vui lòng nhập số điện thoại cần xóa!",
                     "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+            //Kiểm tra xem Số điện thoại có tồn tại trong danh bạ hay không
             if (xuLyDanhBa.tim(danhBa.SDT) != null)
-            {
+            {//Nếu tồn tại, thực hiện xóa danh bạ theo Số điện thoại
                 xuLyDanhBa.xoa(danhBa.SDT);
+                //Cập nhật hiển thị danh sách sau khi xóa
                 hienDSDanhBa();
                 MessageBox.Show("Xóa số điện thoại " + danhBa.SDT + " thành công!",
                     "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -86,6 +89,7 @@ namespace DoAn
                     "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
 
         private void btnSua_Click(object sender, EventArgs e)
         {
