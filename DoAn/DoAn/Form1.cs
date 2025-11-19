@@ -31,6 +31,21 @@ namespace DoAn
 
         private void btnThem_Click(object sender, EventArgs e)
         {
+            if (txtSDT.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập Số điện thoại trước khi thêm!",
+                                "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtSDT.Focus(); // đưa con trỏ chuột vào ô SĐT
+                return;         // dừng hàm, không cho thêm
+            }
+            string sdt = txtSDT.Text.Trim();
+            if (!sdt.All(char.IsDigit))
+            {
+                MessageBox.Show("Số điện thoại chỉ được chứa các chữ số (0-9)!",
+                                "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtSDT.Focus();
+                return;
+            }
             CDanhBa db = new CDanhBa();
             db.SDT = txtSDT.Text;
             db.HoTen = txtHoten.Text;
@@ -125,4 +140,5 @@ namespace DoAn
        
     }
 }
+
 
