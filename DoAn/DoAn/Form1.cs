@@ -17,9 +17,12 @@ namespace DoAn
     {
 
         private List<CDanhBa> dsDB = new List<CDanhBa>();
+       
         public void hienDSDanhBa()
         {
-            dgvDanhBa.DataSource = dsDB.ToList();
+            // Sắp xếp theo tên từ A->Z 
+            dgvDanhBa.DataSource = dsDB.OrderBy(db => db.HoTen).ToList();
+
         }
         private CDanhBa timDanhBa(string sdt)
         {
@@ -40,6 +43,7 @@ namespace DoAn
             dsDB = new List<CDanhBa>();
            
             hienDSDanhBa();
+           
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -57,6 +61,8 @@ namespace DoAn
                 dsDB.Add(db);
                 // Cập nhật lại danh sách hiển thị trên giao diện
                 hienDSDanhBa();
+                MessageBox.Show("Thêm số điện thoại  " + db.SDT + " thành công!",
+                  "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -86,12 +92,10 @@ namespace DoAn
                 MessageBox.Show("Xóa số điện thoại " + danhBa.SDT + " thành công!",
                     "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-     
             else
             {
                 MessageBox.Show("Số điện thoại " + danhBa.SDT + "không tồn tại.\nKhông thể xóa!",
                     "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
             }
         }
 
