@@ -40,3 +40,15 @@ C:\Users\HP\Downloads\DoAn\DoAn\DoAn\obj\Debug\DoAn.csproj.GenerateResource.cach
 C:\Users\HP\Downloads\DoAn\DoAn\DoAn\obj\Debug\DoAn.csproj.CoreCompileInputs.cache
 C:\Users\HP\Downloads\DoAn\DoAn\DoAn\obj\Debug\DoAn.exe
 C:\Users\HP\Downloads\DoAn\DoAn\DoAn\obj\Debug\DoAn.pdb
+D:\DA_NHOM5\DoAn\DoAn\bin\Debug\DoAn.exe.config
+D:\DA_NHOM5\DoAn\DoAn\bin\Debug\DoAn.exe
+D:\DA_NHOM5\DoAn\DoAn\bin\Debug\DoAn.pdb
+D:\DA_NHOM5\DoAn\DoAn\obj\Debug\DoAn.csproj.AssemblyReference.cache
+D:\DA_NHOM5\DoAn\DoAn\obj\Debug\DoAn.exe.config
+D:\DA_NHOM5\DoAn\DoAn\obj\Debug\DoAn.User.resources
+D:\DA_NHOM5\DoAn\DoAn\obj\Debug\DoAn.Properties.Resources.resources
+D:\DA_NHOM5\DoAn\DoAn\obj\Debug\DoAn.csproj.GenerateResource.cache
+D:\DA_NHOM5\DoAn\DoAn\obj\Debug\DoAn.csproj.CoreCompileInputs.cache
+D:\DA_NHOM5\DoAn\DoAn\obj\Debug\DoAn.exe
+D:\DA_NHOM5\DoAn\DoAn\obj\Debug\DoAn.pdb
+D:\DA_NHOM5\DoAn\DoAn\obj\Debug\DoAn.Main.resources
