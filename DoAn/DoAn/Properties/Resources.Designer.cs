@@ -73,6 +73,16 @@ namespace DoAn.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap account_circle_60dp_FFFFFF {
+            get {
+                object obj = ResourceManager.GetObject("account_circle_60dp_FFFFFF", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap close_24dp_FFFFFF {
             get {
                 object obj = ResourceManager.GetObject("close_24dp_FFFFFF", resourceCulture);
@@ -86,6 +96,16 @@ namespace DoAn.Properties {
         internal static System.Drawing.Bitmap contact_phone_42dp_FFFFFF {
             get {
                 object obj = ResourceManager.GetObject("contact_phone_42dp_FFFFFF", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap favorite_24dp_FFFFFF {
+            get {
+                object obj = ResourceManager.GetObject("favorite_24dp_FFFFFF", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -186,6 +206,16 @@ namespace DoAn.Properties {
         internal static System.Drawing.Bitmap settings_60dp_FFFFFF {
             get {
                 object obj = ResourceManager.GetObject("settings_60dp_FFFFFF", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap star_24dp_000000_FILL0_wght0_GRAD0_opszNaN {
+            get {
+                object obj = ResourceManager.GetObject("star_24dp_000000_FILL0_wght0_GRAD0_opszNaN", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

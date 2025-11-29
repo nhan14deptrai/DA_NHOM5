@@ -13,9 +13,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DoAn
-{   public partial class User : Form
+{
+    public partial class User : Form
     {
-        
+
         CXuLyDanhBa xuLyDanhBa = new CXuLyDanhBa();
         public void hienDSDanhBa()
         {
@@ -24,14 +25,15 @@ namespace DoAn
         public User()
         {
             InitializeComponent();
+
         }
         private void Form1_Load(object sender, EventArgs e)
         {
             loadFile();
             hienDSDanhBa();
         }
-       
-       
+
+
         private void btnThem_Click(object sender, EventArgs e)
         {
             // 1. Lấy dữ liệu và làm sạch (xóa khoảng trắng thừa ở 2 đầu)
@@ -85,12 +87,13 @@ namespace DoAn
                 // Nếu vượt qua hết các cửa ải trên thì mới tạo đối tượng
                 CDanhBa db = new CDanhBa();
                 db.SDT = sdt;
-                db.HoTen = hoTen; 
+                db.HoTen = hoTen;
                 db.Email = email;
                 db.Diachi = diaChi;
                 //Thêm đối tượng mới tạo vào danh sách
                 xuLyDanhBa.them(db);
                 hienDSDanhBa();
+                xuLyDanhBa.ghiFile("dsDanhBa.bin");
                 MessageBox.Show("Thêm số điện thoại: " + db.SDT + " thành công", "Thông báo");
             }
         }
@@ -167,7 +170,7 @@ namespace DoAn
             loadFile();
             hienDSDanhBa();
         }
- 
+
         public void txtTimKiem_TextChanged(object sender, EventArgs e)
         {
             List<CDanhBa> dsTimKiemTheoTen = new List<CDanhBa>();
@@ -198,7 +201,7 @@ namespace DoAn
             }
             //Thực hiện lọc dữ liệu.
             //Điều kiện 1: Số điện thoại chứa từ khóa.
-            var ketQuaTimKiem = xuLyDanhBa.layDanhSachDanhBa().Where(c =>c.SDT.ToLower().Contains(tukhoa) 
+            var ketQuaTimKiem = xuLyDanhBa.layDanhSachDanhBa().Where(c => c.SDT.ToLower().Contains(tukhoa)
                 || c.HoTen.ToLower().Contains(tukhoa)).ToList();// Điều kiện 2: Họ tên chứa từ khóa.
 
             //Hiển thị kết quả lên giao diện.
@@ -246,6 +249,35 @@ namespace DoAn
         private void btnThoat_Click(object sender, EventArgs e)
         {
             groupBox1.Visible = false;
+        }
+
+        private void dgvDanhBa_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // 1. Kiểm tra xem có bấm nhầm vào tiêu đề cột không
+            if (e.RowIndex == -1) return;
+
+            // 2. Lấy đối tượng CDanhBa từ dòng được chọn
+            // LƯU Ý: Dùng 'DataBoundItem' là cách chuẩn nhất khi gán DataSource bằng List
+            CDanhBa contactDuocChon = dgvDanhBa.Rows[e.RowIndex].DataBoundItem as CDanhBa;
+
+            if (contactDuocChon != null)
+            {
+                // 3. Khởi tạo FormThongTin và TRUYỀN ĐỐI TƯỢNG SANG
+                // Code này sẽ gọi cái Constructor có tham số mà ta vừa viết ở Bước 1
+                ThongTinUser formChiTiet = new ThongTinUser(contactDuocChon);
+
+                // 4. Hiện Form lên và đợi kết quả
+                // ShowDialog() sẽ làm code dừng lại ở đây cho đến khi Form con đóng lại
+                if (formChiTiet.ShowDialog() == DialogResult.OK)
+                {
+                    // 5. Nếu người dùng bấm Lưu bên kia, ta cần làm mới (Refresh) lại bảng
+                    // Để nó cập nhật tên mới, ảnh mới...
+
+                    xuLyDanhBa.ghiFile("dsDanhBa.bin"); // Tùy chọn: Lưu luôn xuống file cho chắc
+                    hienDSDanhBa(); // Gọi hàm hiển thị lại DataGridView
+                }
+            }
+
         }
     }
 }

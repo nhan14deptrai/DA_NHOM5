@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
 namespace DoAn
 {
@@ -15,9 +16,16 @@ namespace DoAn
         public Main()
         {
             InitializeComponent();
+            OpenChildForm(new User());
+           
+
+
+
         }
         // Biến để lưu form hiện tại đang mở
         private Form currentFormChild;
+
+             private Form currentUser;
 
         // Hàm mở form con
         private void OpenChildForm(Form childForm)
@@ -27,7 +35,7 @@ namespace DoAn
             {
                 currentFormChild.Close();
             }
-            pnlHome.Visible = false;
+          
             currentFormChild = childForm;
 
             // Thiết lập để form con hoạt động như một control
@@ -36,68 +44,39 @@ namespace DoAn
             childForm.Dock = DockStyle.Fill; // Lấp đầy panel
 
             // Thêm form con vào Panel chứa (giả sử tên là panelBody)
-            panel1.Controls.Add(childForm);
-            panel1.Tag = childForm;
+            pnlHome.Controls.Add(childForm);
+            pnlHome.Tag = childForm;
 
             // Hiển thị lên
             childForm.BringToFront();
             childForm.Show();
         }
-        void setButtonColor(Button btn)
-        {   Main user = new Main();
-            switch (btn.Name)
-            {
-              case "btnHome": btnHome.ImageIndex = 1;
-                    break;
-               case "btnUser": btnUser.ImageIndex = 3;
-                    break;
-                case "btnSetting": btnSetting.ImageIndex = 5;
-                    break;
-                default: break;
+       
 
-            }
-         
-            btn.BackColor = Color.FromArgb(24, 30, 54);
-            panel1.Top = btn.Top;
-            panel1.Height = btn.Height-30;
-            panel1.Location = new Point(btn.Location.X ,btn.Location.Y-65);
-            panel1.BringToFront();
-           
-        }
+
         private void btnExit_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Ban muon thoat chuong trinh", "Thong bao", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result == DialogResult.Yes)
-            {
+          
                 Close();
-            }
+            
             
         }
       
        
         private void btnHome_Click(object sender, EventArgs e)
         {
-            // 1. Đóng form con đang mở (nếu có)
-            if (currentFormChild != null)
-            {
-                currentFormChild.Close();
-            }
+            OpenChildForm(new User());
 
-            // 2. Hiện Panel Home lên
-            pnlHome.Visible = true;
 
-            // 3. Đưa nó lên trên cùng (đề phòng bị các control khác che)
-            pnlHome.BringToFront();
+
         }
 
         private void btnUser_Click(object sender, EventArgs e)
         {
-            
-            // Gọi hàm mở form User
-            OpenChildForm(new User());
+        ThongTinUser userForm = new ThongTinUser();
 
-            // (Tuỳ chọn) Đổi màu nút hoặc tiêu đề nếu muốn
-           
+            OpenChildForm(userForm);
+
         }
 
         private void btnSetting_Click(object sender, EventArgs e)
