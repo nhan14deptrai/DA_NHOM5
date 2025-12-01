@@ -18,9 +18,16 @@ namespace DoAn
     {
 
         CXuLyDanhBa xuLyDanhBa = new CXuLyDanhBa();
+
         public void hienDSDanhBa()
         {
-            dgvDanhBa.DataSource = xuLyDanhBa.layDanhSachDanhBa();
+            dgvDanhBa.DataSource = xuLyDanhBa.layDanhSachDanhBa().OrderByDescending(db => db.IsFavorite)
+                .ThenBy(db => db.Ten)
+                .ToList();
+
+            dgvDanhBa.Columns["Ten"].Visible = false;
+            dgvDanhBa.Columns["IsFavorite"].HeaderText = "⭐";
+
         }
         public User()
         {
@@ -36,7 +43,7 @@ namespace DoAn
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            // 1. Lấy dữ liệu và làm sạch (xóa khoảng trắng thừa ở 2 đầu)
+
             string sdt = txtSDT.Text.Trim();
             string hoTen = txtHoten.Text.Trim();
             string email = txtEmail.Text.Trim();
@@ -97,79 +104,14 @@ namespace DoAn
                 MessageBox.Show("Thêm số điện thoại: " + db.SDT + " thành công", "Thông báo");
             }
         }
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-            CDanhBa danhBa = new CDanhBa();
-            danhBa.SDT = txtSDT.Text;
-            if (danhBa.SDT == "")
-            {
-                MessageBox.Show("Vui lòng nhập số điện thoại cần xóa!",
-                    "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            if (xuLyDanhBa.tim(danhBa.SDT) != null)
-            {
-                xuLyDanhBa.xoa(danhBa.SDT);
-                hienDSDanhBa();
-                MessageBox.Show("Xóa số điện thoại " + danhBa.SDT + " thành công!",
-                    "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                MessageBox.Show("Số điện thoại " + danhBa.SDT + "không tồn tại.\nKhông thể xóa!",
-                    "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
-
-        private void btnSua_Click(object sender, EventArgs e)
-        {
-
-            string sdtCanTim = txtSDT.Text;
-            if (string.IsNullOrWhiteSpace(sdtCanTim))
-            {
-                MessageBox.Show("Vui lòng nhập Số điện thoại của liên hệ cần sửa vào ô 'Số điện thoại'.",
-                                "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            // 1. Tìm đối tượng Danh Bạ (CDanhBa) cần sửa trong List
-            CDanhBa dbCanSua = xuLyDanhBa.tim(sdtCanTim);
-
-            if (dbCanSua != null)
-            {
-                // 2. Cập nhật các thông tin khác từ TextBox (SDT vẫn giữ nguyên)
-                dbCanSua.HoTen = txtHoten.Text;
-                dbCanSua.Email = txtEmail.Text;
-                dbCanSua.Diachi = txtDiachi.Text;
-
-                // 3. Hiển thị lại danh sách để DataGridView được cập nhật
-                hienDSDanhBa();
-
-                MessageBox.Show($"Đã cập nhật thông tin thành công cho số điện thoại: {sdtCanTim}!",
-                                "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                MessageBox.Show("Số điện thoại " + sdtCanTim + " không tồn tại.\nKhông thể sửa!",
-                                "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-
-
-        }
-        private void btnLuuFile_Click(object sender, EventArgs e)
-        {
-            xuLyDanhBa.ghiFile("dsDanhBa.bin");
-            MessageBox.Show("Lưu thành công!!");
-        }
+       
+      
+      
         public void loadFile()
         {
             xuLyDanhBa.docFile("dsDanhBa.bin");
         }
-        private void btnLoadFile_Click(object sender, EventArgs e)
-        {
-            loadFile();
-            hienDSDanhBa();
-        }
+
 
         public void txtTimKiem_TextChanged(object sender, EventArgs e)
         {
@@ -253,29 +195,32 @@ namespace DoAn
 
         private void dgvDanhBa_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            // 1. Kiểm tra xem có bấm nhầm vào tiêu đề cột không
             if (e.RowIndex == -1) return;
 
-            // 2. Lấy đối tượng CDanhBa từ dòng được chọn
-            // LƯU Ý: Dùng 'DataBoundItem' là cách chuẩn nhất khi gán DataSource bằng List
             CDanhBa contactDuocChon = dgvDanhBa.Rows[e.RowIndex].DataBoundItem as CDanhBa;
 
             if (contactDuocChon != null)
             {
-                // 3. Khởi tạo FormThongTin và TRUYỀN ĐỐI TƯỢNG SANG
-                // Code này sẽ gọi cái Constructor có tham số mà ta vừa viết ở Bước 1
                 ThongTinUser formChiTiet = new ThongTinUser(contactDuocChon);
 
-                // 4. Hiện Form lên và đợi kết quả
-                // ShowDialog() sẽ làm code dừng lại ở đây cho đến khi Form con đóng lại
                 if (formChiTiet.ShowDialog() == DialogResult.OK)
                 {
-                    // 5. Nếu người dùng bấm Lưu bên kia, ta cần làm mới (Refresh) lại bảng
-                    // Để nó cập nhật tên mới, ảnh mới...
-
-                    xuLyDanhBa.ghiFile("dsDanhBa.bin"); // Tùy chọn: Lưu luôn xuống file cho chắc
-                    hienDSDanhBa(); // Gọi hàm hiển thị lại DataGridView
+                    // Nếu form con yêu cầu xóa
+                    if (formChiTiet.YeuCauXoa == true)
+                    {
+                        xuLyDanhBa.xoa(contactDuocChon.SDT);
+                        xuLyDanhBa.ghiFile("dsDanhBa.bin");
+                        hienDSDanhBa();
+                        MessageBox.Show("Đã xóa liên hệ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        // Ngược lại là sửa
+                        xuLyDanhBa.ghiFile("dsDanhBa.bin");
+                        hienDSDanhBa();
+                    }
                 }
+
             }
 
         }

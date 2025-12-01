@@ -96,35 +96,35 @@
             this.TLPMenu.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TLPMenu.Name = "TLPMenu";
             this.TLPMenu.RowCount = 4;
-            this.TLPMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 90F));
-            this.TLPMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 90F));
-            this.TLPMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 90F));
-            this.TLPMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 90F));
-            this.TLPMenu.Size = new System.Drawing.Size(91, 670);
+            this.TLPMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 62F));
+            this.TLPMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 59F));
+            this.TLPMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 61F));
+            this.TLPMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 178F));
+            this.TLPMenu.Size = new System.Drawing.Size(54, 670);
             this.TLPMenu.TabIndex = 1;
             // 
             // pnlHome
             // 
             this.pnlHome.BackColor = System.Drawing.Color.MintCream;
             this.pnlHome.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlHome.Location = new System.Drawing.Point(91, 30);
+            this.pnlHome.Location = new System.Drawing.Point(54, 30);
             this.pnlHome.Name = "pnlHome";
-            this.pnlHome.Size = new System.Drawing.Size(1009, 670);
+            this.pnlHome.Size = new System.Drawing.Size(1046, 670);
             this.pnlHome.TabIndex = 2;
             // 
             // btnHome
             // 
             this.btnHome.BackColor = System.Drawing.Color.LimeGreen;
+            this.btnHome.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHome.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHome.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnHome.Image = global::DoAn.Properties.Resources.home_60dp_FFFFFF;
+            this.btnHome.Image = global::DoAn.Properties.Resources.home_50dp_FFFFFF;
             this.btnHome.Location = new System.Drawing.Point(0, 0);
             this.btnHome.Margin = new System.Windows.Forms.Padding(0);
             this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(90, 90);
+            this.btnHome.Size = new System.Drawing.Size(54, 62);
             this.btnHome.TabIndex = 0;
-            this.btnHome.Text = "Home";
             this.btnHome.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnHome.UseVisualStyleBackColor = false;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
@@ -133,31 +133,30 @@
             // 
             this.btnSetting.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnSetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSetting.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSetting.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnSetting.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSetting.Image = global::DoAn.Properties.Resources.settings_60dp_FFFFFF;
-            this.btnSetting.Location = new System.Drawing.Point(0, 180);
+            this.btnSetting.Image = global::DoAn.Properties.Resources.settings_50dp_FFFFFF;
+            this.btnSetting.Location = new System.Drawing.Point(0, 121);
             this.btnSetting.Margin = new System.Windows.Forms.Padding(0);
             this.btnSetting.Name = "btnSetting";
-            this.btnSetting.Size = new System.Drawing.Size(91, 90);
+            this.btnSetting.Size = new System.Drawing.Size(54, 61);
             this.btnSetting.TabIndex = 2;
-            this.btnSetting.Text = "Setting";
             this.btnSetting.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSetting.UseVisualStyleBackColor = true;
             this.btnSetting.Click += new System.EventHandler(this.btnSetting_Click);
             // 
             // btnUser
             // 
+            this.btnUser.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUser.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUser.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnUser.Image = global::DoAn.Properties.Resources.account_box_60dp_FFFFFF;
-            this.btnUser.Location = new System.Drawing.Point(0, 90);
+            this.btnUser.Image = global::DoAn.Properties.Resources.account_box_50dp_FFFFFF;
+            this.btnUser.Location = new System.Drawing.Point(0, 62);
             this.btnUser.Margin = new System.Windows.Forms.Padding(0);
             this.btnUser.Name = "btnUser";
-            this.btnUser.Size = new System.Drawing.Size(90, 90);
+            this.btnUser.Size = new System.Drawing.Size(54, 59);
             this.btnUser.TabIndex = 1;
-            this.btnUser.Text = "User";
             this.btnUser.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnUser.UseVisualStyleBackColor = true;
             this.btnUser.Click += new System.EventHandler(this.btnUser_Click);

@@ -73,9 +73,7 @@ namespace DoAn
 
         private void btnUser_Click(object sender, EventArgs e)
         {
-        ThongTinUser userForm = new ThongTinUser();
-
-            OpenChildForm(userForm);
+       
 
         }
 

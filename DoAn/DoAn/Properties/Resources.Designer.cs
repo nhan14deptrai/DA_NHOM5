@@ -63,6 +63,16 @@ namespace DoAn.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap account_box_50dp_FFFFFF {
+            get {
+                object obj = ResourceManager.GetObject("account_box_50dp_FFFFFF", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap account_box_60dp_FFFFFF {
             get {
                 object obj = ResourceManager.GetObject("account_box_60dp_FFFFFF", resourceCulture);
@@ -83,6 +93,16 @@ namespace DoAn.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap account_circle_60dp_FFFFFF1 {
+            get {
+                object obj = ResourceManager.GetObject("account_circle_60dp_FFFFFF1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap close_24dp_FFFFFF {
             get {
                 object obj = ResourceManager.GetObject("close_24dp_FFFFFF", resourceCulture);
@@ -96,6 +116,26 @@ namespace DoAn.Properties {
         internal static System.Drawing.Bitmap contact_phone_42dp_FFFFFF {
             get {
                 object obj = ResourceManager.GetObject("contact_phone_42dp_FFFFFF", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap delete_24dp_000000 {
+            get {
+                object obj = ResourceManager.GetObject("delete_24dp_000000", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap edit_24dp_000000 {
+            get {
+                object obj = ResourceManager.GetObject("edit_24dp_000000", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -126,6 +166,16 @@ namespace DoAn.Properties {
         internal static System.Drawing.Bitmap fullscreen_32dp_FFFFFF {
             get {
                 object obj = ResourceManager.GetObject("fullscreen_32dp_FFFFFF", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap home_50dp_FFFFFF {
+            get {
+                object obj = ResourceManager.GetObject("home_50dp_FFFFFF", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -193,6 +243,26 @@ namespace DoAn.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap person_add_alt_24dp_000000 {
+            get {
+                object obj = ResourceManager.GetObject("person_add_alt_24dp_000000", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap person_add_alt_24dp_0000001 {
+            get {
+                object obj = ResourceManager.GetObject("person_add_alt_24dp_0000001", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap search_24dp_FFFFFF {
             get {
                 object obj = ResourceManager.GetObject("search_24dp_FFFFFF", resourceCulture);
@@ -203,9 +273,29 @@ namespace DoAn.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap settings_50dp_FFFFFF {
+            get {
+                object obj = ResourceManager.GetObject("settings_50dp_FFFFFF", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap settings_60dp_FFFFFF {
             get {
                 object obj = ResourceManager.GetObject("settings_60dp_FFFFFF", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap star_24dp_000000 {
+            get {
+                object obj = ResourceManager.GetObject("star_24dp_000000", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

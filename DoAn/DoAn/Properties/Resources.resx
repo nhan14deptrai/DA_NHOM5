@@ -118,8 +118,17 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="star_24dp_000000_FILL0_wght0_GRAD0_opszNaN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\star_24dp_000000_FILL0_wght0_GRAD0_opszNaN.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="account_circle_60dp_FFFFFF1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\account_circle_60dp_FFFFFF1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="settings_60dp_FFFFFF" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\settings_60dp_FFFFFF.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="delete_24dp_000000" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\delete_24dp_000000.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="favorite_24dp_FFFFFF" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\favorite_24dp_FFFFFF.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -130,8 +139,8 @@
   <data name="Logo_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Logo_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="fullscreen_32dp_FFFFFF" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\fullscreen_32dp_FFFFFF.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="home_50dp_FFFFFF" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\home_50dp_FFFFFF.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="home_60dp_FFFFFF" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\home_60dp_FFFFFF.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -142,28 +151,46 @@
   <data name="close_24dp_FFFFFF" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\close_24dp_FFFFFF.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="account_circle_60dp_FFFFFF" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\account_circle_60dp_FFFFFF.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="account_box_60dp_FFFFFF" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\account_box_60dp_FFFFFF.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="contact_phone_42dp_FFFFFF" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\contact_phone_42dp_FFFFFF.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="person_add_alt_24dp_0000001" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\person_add_alt_24dp_0000001.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Logo_STU" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Logo_STU.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Logo_1 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Logo_1 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="fullscreen_24dp_FFFFFF" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\fullscreen_24dp_FFFFFF.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="account_box_50dp_FFFFFF" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\account_box_50dp_FFFFFF.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="search_24dp_FFFFFF" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\search_24dp_FFFFFF.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="account_circle_60dp_FFFFFF" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\account_circle_60dp_FFFFFF.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="person_add_alt_24dp_000000" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\person_add_alt_24dp_000000.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="star_24dp_000000_FILL0_wght0_GRAD0_opszNaN" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\star_24dp_000000_FILL0_wght0_GRAD0_opszNaN.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="edit_24dp_000000" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\edit_24dp_000000.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="settings_50dp_FFFFFF" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\settings_50dp_FFFFFF.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fullscreen_24dp_FFFFFF" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fullscreen_24dp_FFFFFF.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Logo_1 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Logo_1 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fullscreen_32dp_FFFFFF" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fullscreen_32dp_FFFFFF.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="contact_phone_42dp_FFFFFF" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\contact_phone_42dp_FFFFFF.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="star_24dp_000000" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\star_24dp_000000.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

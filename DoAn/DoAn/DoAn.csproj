@@ -153,5 +153,32 @@
   <ItemGroup>
     <None Include="Resources\star_24dp_000000_FILL0_wght0_GRAD0_opszNaN.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home_50dp_FFFFFF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\account_box_50dp_FFFFFF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings_50dp_FFFFFF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\account_circle_60dp_FFFFFF1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\person_add_alt_24dp_000000.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\person_add_alt_24dp_0000001.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_24dp_000000.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_24dp_000000.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\star_24dp_000000.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
