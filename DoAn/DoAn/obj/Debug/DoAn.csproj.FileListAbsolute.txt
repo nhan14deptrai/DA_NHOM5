@@ -53,3 +53,16 @@ D:\DA_NHOM5\DoAn\DoAn\obj\Debug\DoAn.exe
 D:\DA_NHOM5\DoAn\DoAn\obj\Debug\DoAn.pdb
 D:\DA_NHOM5\DoAn\DoAn\obj\Debug\DoAn.Main.resources
 D:\DA_NHOM5\DoAn\DoAn\obj\Debug\DoAn.ThongTinUser.resources
+C:\Users\nhan1\OneDrive\Desktop\DA_NHOM5\DoAn\DoAn\bin\Debug\DoAn.exe.config
+C:\Users\nhan1\OneDrive\Desktop\DA_NHOM5\DoAn\DoAn\bin\Debug\DoAn.exe
+C:\Users\nhan1\OneDrive\Desktop\DA_NHOM5\DoAn\DoAn\bin\Debug\DoAn.pdb
+C:\Users\nhan1\OneDrive\Desktop\DA_NHOM5\DoAn\DoAn\obj\Debug\DoAn.csproj.AssemblyReference.cache
+C:\Users\nhan1\OneDrive\Desktop\DA_NHOM5\DoAn\DoAn\obj\Debug\DoAn.exe.config
+C:\Users\nhan1\OneDrive\Desktop\DA_NHOM5\DoAn\DoAn\obj\Debug\DoAn.Main.resources
+C:\Users\nhan1\OneDrive\Desktop\DA_NHOM5\DoAn\DoAn\obj\Debug\DoAn.ThongTinUser.resources
+C:\Users\nhan1\OneDrive\Desktop\DA_NHOM5\DoAn\DoAn\obj\Debug\DoAn.User.resources
+C:\Users\nhan1\OneDrive\Desktop\DA_NHOM5\DoAn\DoAn\obj\Debug\DoAn.Properties.Resources.resources
+C:\Users\nhan1\OneDrive\Desktop\DA_NHOM5\DoAn\DoAn\obj\Debug\DoAn.csproj.GenerateResource.cache
+C:\Users\nhan1\OneDrive\Desktop\DA_NHOM5\DoAn\DoAn\obj\Debug\DoAn.csproj.CoreCompileInputs.cache
+C:\Users\nhan1\OneDrive\Desktop\DA_NHOM5\DoAn\DoAn\obj\Debug\DoAn.exe
+C:\Users\nhan1\OneDrive\Desktop\DA_NHOM5\DoAn\DoAn\obj\Debug\DoAn.pdb

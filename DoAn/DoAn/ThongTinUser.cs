@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -41,10 +42,8 @@ namespace DoAn
             // Tốt nhất là không cho sửa SĐT ở đây.
             txtSDT.Enabled = false;
             txtSDT.BackColor = System.Drawing.Color.WhiteSmoke;
-
-
-
             // Khóa ô SDT lại không cho sửa (vì là khóa chính)
+
 
         }
 
@@ -56,6 +55,7 @@ namespace DoAn
                 MessageBox.Show("Họ tên không được để trống!");
                 return;
             }
+            
 
             // Cập nhật trực tiếp vào danhBaHienTai
             danhBaHienTai.HoTen = txtHoten.Text.Trim();
@@ -80,11 +80,11 @@ namespace DoAn
                 txtHoten.Text = danhBaHienTai.HoTen;
                 txtEmail.Text = danhBaHienTai.Email;
                 txtDiachi.Text = danhBaHienTai.Diachi;
-                if (danhBaHienTai.IsFavorite == true)
+                if (danhBaHienTai.Favorite == true)
                 {
                     // Trạng thái ĐÃ THÍCH -> Hiện hình sao vàng
                     // 'Properties.Resources.star_filled' là tên file ảnh bạn vừa add vào ở Bước 1
-                    btnThich.Image = Properties.Resources.star_24dp_000000;
+                    btnThich.Image = Properties.Resources.star_24dp_FFFF55;
                 }
                 else
                 {
@@ -93,6 +93,12 @@ namespace DoAn
                 }
                 // Nếu là Sửa thì thường không cho sửa SDT (khóa lại)
                 txtSDT.Enabled = false;
+                if (!string.IsNullOrEmpty(danhBaHienTai.Avatar) && File.Exists(danhBaHienTai.Avatar))
+                {
+                    ptbAvatar.Image = Image.FromFile(danhBaHienTai.Avatar); // show user avatar
+                    ptbAvatar.SizeMode = PictureBoxSizeMode.Zoom; // fit avatar
+                    ptbAvatar.ImageLocation = danhBaHienTai.Avatar;
+                }
             }
         }
 
@@ -114,29 +120,53 @@ namespace DoAn
         }
         private void CapNhatGiaoDienNutSao()
         {
-            if (danhBaHienTai.IsFavorite == true)
+            if (danhBaHienTai.Favorite == true)
             {
                 // Trạng thái ĐÃ THÍCH -> Hiện hình sao vàng
-                // 'Properties.Resources.star_filled' là tên file ảnh bạn vừa add vào ở Bước 1
-               btnThich.Image = Properties.Resources.star_24dp_000000_FILL0_wght0_GRAD0_opszNaN;
+
+                btnThich.Image = Properties.Resources.star_24dp_FFFF55;
             }
             else
             {
                 // Trạng thái CHƯA THÍCH -> Hiện hình sao rỗng
-                btnThich.Image = Properties.Resources.star_24dp_000000;
+                btnThich.Image = Properties.Resources.star_24dp_000000_FILL0_wght0_GRAD0_opszNaN;
             }
         }
         private void btnThich_Click(object sender, EventArgs e)
         {
-            danhBaHienTai.IsFavorite = !danhBaHienTai.IsFavorite;
+            danhBaHienTai.Favorite = !danhBaHienTai.Favorite;
             CapNhatGiaoDienNutSao();
             MessageBox.Show(
-                danhBaHienTai.IsFavorite ? "Đã thêm vào yêu thích!" : "Đã bỏ yêu thích!",
+                danhBaHienTai.Favorite ? "Đã thêm vào yêu thích!" : "Đã bỏ yêu thích!",
                 "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information
             );
-           
+
 
             this.DialogResult = DialogResult.OK;
+        }
+
+        private void btnAnh_Click(object sender, EventArgs e)
+        {
+            String imageLocation = "";
+            try
+            {
+                OpenFileDialog dlg = new OpenFileDialog();
+                dlg.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp";
+                if (dlg.ShowDialog() == DialogResult.OK) { imageLocation = dlg.FileName; }
+                {
+                    imageLocation = dlg.FileName;
+                    danhBaHienTai.Avatar = imageLocation;
+                    ptbAvatar.Image = Image.FromFile(imageLocation); // show user avatar
+                    ptbAvatar.SizeMode = PictureBoxSizeMode.Zoom; // fit avatar
+                    ptbAvatar.ImageLocation= imageLocation;
+                  
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi chọn ảnh: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
         }
     }
 }

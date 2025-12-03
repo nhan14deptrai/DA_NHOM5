@@ -14,23 +14,7 @@ namespace DoAn
         private string m_email;
         private string m_diachi;
         private  bool m_isFavorite;
-        public bool IsFavorite
-        {
-            get { return m_isFavorite; }
-            set { m_isFavorite = value; }
-        }
-        public string Ten
-        {
-            get
-            {
-                if (string.IsNullOrWhiteSpace(HoTen))
-                    return "";
-
-                // Tách theo khoảng trắng
-                string[] parts = HoTen.Trim().Split(' ');
-                return parts[parts.Length - 1];   // Lấy tên cuối
-            }
-        }
+        
 
         public string SDT
         {
@@ -48,7 +32,27 @@ namespace DoAn
         {
             get { return m_diachi; }
             set { m_diachi = value; }
-        }public CDanhBa()
+
+        }
+        public bool Favorite
+        {
+            get { return m_isFavorite; }
+            set { m_isFavorite = value; }
+        }
+        public string Ten
+        {
+            get
+            {
+                if (string.IsNullOrWhiteSpace(HoTen))
+                    return "";
+
+                // Tách theo khoảng trắng
+                string[] parts = HoTen.Trim().Split(' ');
+                return parts[parts.Length - 1];   // Lấy tên cuối
+            }
+        }
+        public string Avatar { get; set; }
+        public CDanhBa()
         {
             m_sdt = "";
             m_hoten = "";
@@ -60,7 +64,8 @@ namespace DoAn
             m_hoten = Hoten;
             m_email= Email;
             m_diachi = Diachi;
-            IsFavorite = favorite;
+            Favorite = favorite;
+           
         }
     }
 }

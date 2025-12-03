@@ -37,12 +37,13 @@
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtDiachi = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pbAvatar = new System.Windows.Forms.PictureBox();
+            this.ptbAvatar = new System.Windows.Forms.PictureBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnThich = new System.Windows.Forms.Button();
+            this.btnAnh = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbAvatar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbAvatar)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -111,7 +112,8 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.pbAvatar);
+            this.panel1.Controls.Add(this.btnAnh);
+            this.panel1.Controls.Add(this.ptbAvatar);
             this.panel1.Controls.Add(this.btnAdd);
             this.panel1.Controls.Add(this.btnSave);
             this.panel1.Controls.Add(this.txtSDT);
@@ -129,17 +131,17 @@
             this.panel1.Size = new System.Drawing.Size(540, 532);
             this.panel1.TabIndex = 14;
             // 
-            // pbAvatar
+            // ptbAvatar
             // 
-            this.pbAvatar.BackColor = System.Drawing.Color.LightGray;
-            this.pbAvatar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pbAvatar.Image = global::DoAn.Properties.Resources.account_circle_60dp_FFFFFF1;
-            this.pbAvatar.Location = new System.Drawing.Point(200, 42);
-            this.pbAvatar.Name = "pbAvatar";
-            this.pbAvatar.Size = new System.Drawing.Size(112, 118);
-            this.pbAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbAvatar.TabIndex = 15;
-            this.pbAvatar.TabStop = false;
+            this.ptbAvatar.BackColor = System.Drawing.Color.LightGray;
+            this.ptbAvatar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.ptbAvatar.Image = global::DoAn.Properties.Resources.account_circle_60dp_FFFFFF1;
+            this.ptbAvatar.Location = new System.Drawing.Point(200, 42);
+            this.ptbAvatar.Name = "ptbAvatar";
+            this.ptbAvatar.Size = new System.Drawing.Size(120, 120);
+            this.ptbAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbAvatar.TabIndex = 15;
+            this.ptbAvatar.TabStop = false;
             // 
             // btnAdd
             // 
@@ -180,6 +182,17 @@
             this.btnThich.UseVisualStyleBackColor = false;
             this.btnThich.Click += new System.EventHandler(this.btnThich_Click);
             // 
+            // btnAnh
+            // 
+            this.btnAnh.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnAnh.Location = new System.Drawing.Point(221, 166);
+            this.btnAnh.Name = "btnAnh";
+            this.btnAnh.Size = new System.Drawing.Size(70, 31);
+            this.btnAnh.TabIndex = 16;
+            this.btnAnh.Text = "Chọn ảnh";
+            this.btnAnh.UseVisualStyleBackColor = true;
+            this.btnAnh.Click += new System.EventHandler(this.btnAnh_Click);
+            // 
             // ThongTinUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -191,7 +204,7 @@
             this.Load += new System.EventHandler(this.ThongTinUser_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbAvatar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbAvatar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -210,6 +223,7 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.PictureBox pbAvatar;
+        private System.Windows.Forms.PictureBox ptbAvatar;
+        private System.Windows.Forms.Button btnAnh;
     }
 }

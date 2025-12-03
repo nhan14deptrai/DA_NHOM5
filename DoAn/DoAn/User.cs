@@ -11,6 +11,8 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Shapes;
+using Path = System.IO.Path;
 
 namespace DoAn
 {
@@ -18,16 +20,15 @@ namespace DoAn
     {
 
         CXuLyDanhBa xuLyDanhBa = new CXuLyDanhBa();
-
+        private string duongDanAnhTamThoi = "";
         public void hienDSDanhBa()
         {
-            dgvDanhBa.DataSource = xuLyDanhBa.layDanhSachDanhBa().OrderByDescending(db => db.IsFavorite)
-                .ThenBy(db => db.Ten)
+            dgvDanhBa.DataSource = xuLyDanhBa.layDanhSachDanhBa().OrderBy(c => c.HoTen).OrderByDescending(c=>c.Favorite)
                 .ToList();
-
             dgvDanhBa.Columns["Ten"].Visible = false;
-            dgvDanhBa.Columns["IsFavorite"].HeaderText = "⭐";
-
+            dgvDanhBa.Columns["Avatar"].Visible = false;
+           
+          
         }
         public User()
         {
@@ -39,7 +40,6 @@ namespace DoAn
             loadFile();
             hienDSDanhBa();
         }
-
 
         private void btnThem_Click(object sender, EventArgs e)
         {
@@ -88,8 +88,33 @@ namespace DoAn
                 txtSDT.Focus();
                 return;
             }
-            else
+            string finalAvatarPath = ""; // Mặc định là rỗng nếu không chọn ảnh
+
+            if (!string.IsNullOrEmpty(duongDanAnhTamThoi) && File.Exists(duongDanAnhTamThoi))
             {
+                try
+                {
+                    // Tạo thư mục Images nếu chưa có
+                    string saveDirectory = Path.Combine(Application.StartupPath, "Images");
+                    if (!Directory.Exists(saveDirectory)) Directory.CreateDirectory(saveDirectory);
+
+                    // Tạo tên file mới duy nhất (VD: avatar_01234.jpg)
+                    string extension = Path.GetExtension(duongDanAnhTamThoi);
+                    string newFileName = $"avatar_{Guid.NewGuid()}{extension}";
+                    string destPath = Path.Combine(saveDirectory, newFileName);
+
+                    // Copy file
+                    File.Copy(duongDanAnhTamThoi, destPath, true);
+                    finalAvatarPath = destPath; // Lưu đường dẫn mới này vào database
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi lưu ảnh: " + ex.Message);
+                    return; // Dừng nếu lưu ảnh lỗi
+                }
+            }
+            
+            
                 // --- THÊM MỚI ---
                 // Nếu vượt qua hết các cửa ải trên thì mới tạo đối tượng
                 CDanhBa db = new CDanhBa();
@@ -97,12 +122,14 @@ namespace DoAn
                 db.HoTen = hoTen;
                 db.Email = email;
                 db.Diachi = diaChi;
+                db.Avatar = finalAvatarPath;
+
                 //Thêm đối tượng mới tạo vào danh sách
                 xuLyDanhBa.them(db);
                 hienDSDanhBa();
                 xuLyDanhBa.ghiFile("dsDanhBa.bin");
                 MessageBox.Show("Thêm số điện thoại: " + db.SDT + " thành công", "Thông báo");
-            }
+            
         }
        
       
@@ -115,16 +142,37 @@ namespace DoAn
 
         public void txtTimKiem_TextChanged(object sender, EventArgs e)
         {
-            List<CDanhBa> dsTimKiemTheoTen = new List<CDanhBa>();
-            foreach (var item in xuLyDanhBa.layDanhSachDanhBa())
+            string tuKhoa = txtTimKiem.Text.Trim().ToLower();
+
+            // 2. Nếu ô tìm kiếm trống, trả về danh sách gốc
+            if (string.IsNullOrEmpty(tuKhoa))
             {
-                if (item.HoTen == txtTimKiem.Text)
-                {
-                    dsTimKiemTheoTen.Add(item);
-                }
+                hienDSDanhBa();
+                return;
             }
-            dgvDanhBa.DataSource = dsTimKiemTheoTen;
-            hienDSDanhBa();
+
+            // 3. Lọc dữ liệu bằng LINQ (Tìm gần đúng trong cả Tên và SĐT)
+            var ketQuaTimKiem = xuLyDanhBa.layDanhSachDanhBa()
+                .Where(c => c.HoTen.ToLower().Contains(tuKhoa) ||
+                            c.SDT.Contains(tuKhoa))
+                .ToList();
+
+            // 4. Hiển thị kết quả
+            dgvDanhBa.DataSource = null; // Reset để tránh lỗi hiển thị
+            dgvDanhBa.DataSource = ketQuaTimKiem;
+            dgvDanhBa.DataSource = ketQuaTimKiem.OrderBy(c => c.HoTen).OrderByDescending(c => c.Favorite)
+               .ToList();
+            dgvDanhBa.Columns["SDT"].HeaderText = "Số điện thoại";
+            dgvDanhBa.Columns["HoTen"].HeaderText = "Họ và tên";
+            dgvDanhBa.Columns["Email"].HeaderText = "Email";
+            dgvDanhBa.Columns["Diachi"].HeaderText = "Địa chỉ";
+            dgvDanhBa.Columns["Ten"].Visible = false;
+            dgvDanhBa.Columns["Avatar"].Visible = false;
+            
+            
+            // QUAN TRỌNG: KHÔNG ĐƯỢC GỌI hienDSDanhBa() Ở ĐÂY
+            // Vì nó sẽ load lại danh sách gốc, làm mất kết quả vừa tìm.
+
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)
@@ -132,13 +180,15 @@ namespace DoAn
             //Lấy dữ liệu từ ô txtTimKiem.
             //Trim(): Cắt bỏ khoảng trắng thừa ở đầu và cuối (VD: " abc " -> "abc").
             //ToLower(): Chuyển tất cả thành chữ thường để dễ dàng tìm kiếm.
+            
             string tukhoa = txtTimKiem.Text.Trim().ToLower();
+           
             //Kiểm tra txtTimKiem có dữ liệu hay không.
             if (string.IsNullOrEmpty(tukhoa))
             {
                 //Nếu rỗng, hiển thị lại danh sách gốc.
-                dgvDanhBa.DataSource = null;
-                dgvDanhBa.DataSource = xuLyDanhBa.layDanhSachDanhBa();
+             
+                hienDSDanhBa();
                 return;//Dừng hàm tại đây.
             }
             //Thực hiện lọc dữ liệu.
@@ -149,12 +199,22 @@ namespace DoAn
             //Hiển thị kết quả lên giao diện.
             dgvDanhBa.DataSource = null; // Reset nguồn dữ liệu
             dgvDanhBa.DataSource = ketQuaTimKiem; // Gán danh sách đã lọc
+            dgvDanhBa.Columns["SDT"].HeaderText = "Số điện thoại";
+            dgvDanhBa.Columns["HoTen"].HeaderText = "Họ và tên";
+            dgvDanhBa.Columns["Email"].HeaderText = "Email";
+            dgvDanhBa.Columns["Diachi"].HeaderText = "Địa chỉ";
+            dgvDanhBa.Columns["Ten"].Visible = false;
+            dgvDanhBa.Columns["Avatar"].Visible = false;
+            dgvDanhBa.DataSource = ketQuaTimKiem.OrderBy(c => c.HoTen).OrderByDescending(c => c.Favorite)
+               .ToList();
+
 
             //Thông báo khi không tìm thấy kết quả nào.
             if (ketQuaTimKiem.Count == 0)
             {
                 MessageBox.Show("Không tìm thấy liên lạc nào khớp với từ khóa!", "Thông báo");
             }
+
         }
 
         //Hàm đưa dữ liệu từ bảng liên TextBox.
@@ -219,10 +279,43 @@ namespace DoAn
                         xuLyDanhBa.ghiFile("dsDanhBa.bin");
                         hienDSDanhBa();
                     }
+                   
+
+                    }
+
                 }
 
+            
+        }
+        private Image LoadImageSafe(string path)
+        {
+            using (FileStream fs = new FileStream(path, FileMode.Open, FileAccess.Read))
+            {
+                return Image.FromStream(fs);
             }
+        }
+       
+        private void btnAnh_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                OpenFileDialog dlg = new OpenFileDialog();
+                dlg.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp";
+                dlg.Title = "Chọn ảnh đại diện";
 
+                if (dlg.ShowDialog() == DialogResult.OK)
+                {
+                    duongDanAnhTamThoi = dlg.FileName; // Lưu đường dẫn tạm
+
+                    // Hiển thị lên PictureBox bằng cách an toàn
+                    ptbAvatar.Image = LoadImageSafe(duongDanAnhTamThoi);
+                    ptbAvatar.SizeMode = PictureBoxSizeMode.Zoom;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi chọn ảnh: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
