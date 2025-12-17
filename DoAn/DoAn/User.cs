@@ -129,7 +129,14 @@ namespace DoAn
                 hienDSDanhBa();
                 xuLyDanhBa.ghiFile("dsDanhBa.bin");
                 MessageBox.Show("Thêm số điện thoại: " + db.SDT + " thành công", "Thông báo");
-            
+            txtSDT.Clear();
+            txtHoten.Clear();
+            txtEmail.Clear();
+            txtDiachi.Clear();
+            ptbAvatar.Image = Properties.Resources.account_circle_60dp_FFFFFF;
+            duongDanAnhTamThoi = "";
+            txtSDT.Focus();
+
         }
        
       

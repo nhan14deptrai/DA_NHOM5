@@ -66,3 +66,16 @@ C:\Users\nhan1\OneDrive\Desktop\DA_NHOM5\DoAn\DoAn\obj\Debug\DoAn.csproj.Generat
 C:\Users\nhan1\OneDrive\Desktop\DA_NHOM5\DoAn\DoAn\obj\Debug\DoAn.csproj.CoreCompileInputs.cache
 C:\Users\nhan1\OneDrive\Desktop\DA_NHOM5\DoAn\DoAn\obj\Debug\DoAn.exe
 C:\Users\nhan1\OneDrive\Desktop\DA_NHOM5\DoAn\DoAn\obj\Debug\DoAn.pdb
+D:\HOC TAP\DA_NHOM5\DoAn\DoAn\bin\Debug\DoAn.exe.config
+D:\HOC TAP\DA_NHOM5\DoAn\DoAn\bin\Debug\DoAn.exe
+D:\HOC TAP\DA_NHOM5\DoAn\DoAn\bin\Debug\DoAn.pdb
+D:\HOC TAP\DA_NHOM5\DoAn\DoAn\obj\Debug\DoAn.csproj.AssemblyReference.cache
+D:\HOC TAP\DA_NHOM5\DoAn\DoAn\obj\Debug\DoAn.exe.config
+D:\HOC TAP\DA_NHOM5\DoAn\DoAn\obj\Debug\DoAn.Main.resources
+D:\HOC TAP\DA_NHOM5\DoAn\DoAn\obj\Debug\DoAn.ThongTinUser.resources
+D:\HOC TAP\DA_NHOM5\DoAn\DoAn\obj\Debug\DoAn.User.resources
+D:\HOC TAP\DA_NHOM5\DoAn\DoAn\obj\Debug\DoAn.Properties.Resources.resources
+D:\HOC TAP\DA_NHOM5\DoAn\DoAn\obj\Debug\DoAn.csproj.GenerateResource.cache
+D:\HOC TAP\DA_NHOM5\DoAn\DoAn\obj\Debug\DoAn.csproj.CoreCompileInputs.cache
+D:\HOC TAP\DA_NHOM5\DoAn\DoAn\obj\Debug\DoAn.exe
+D:\HOC TAP\DA_NHOM5\DoAn\DoAn\obj\Debug\DoAn.pdb

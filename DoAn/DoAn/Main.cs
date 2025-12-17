@@ -27,10 +27,6 @@ namespace DoAn
         {
             InitializeComponent();
             OpenChildForm(new User());
-           
-
-
-
         }
         // Biến để lưu form hiện tại đang mở
         private Form currentFormChild;
